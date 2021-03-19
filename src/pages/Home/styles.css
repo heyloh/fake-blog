@@ -1,0 +1,31 @@
+body {
+  background: rgb(103, 55, 165);
+  padding: 30px;
+}
+
+.container {
+  max-width: 1270px;
+  min-height: 100vh;
+
+  margin: 0 auto;
+  padding: 30px;
+
+  background: rgb(228, 226, 231);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > h1 {
+  font-size: 52px;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(20, 20, 20);
+
+  margin: 64px;
+}
