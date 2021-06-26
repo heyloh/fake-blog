@@ -22,7 +22,7 @@ function Home(props: HomeProps) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [allPosts, setAllPosts] = useState<Post[]>([]);
   const [page, setPage] = useState(0);
-  const [postsPerPage, setPostsPerPage] = useState(6);
+  const [postsPerPage] = useState(6);
   const noMorePosts = page + postsPerPage >= allPosts.length;
   
   const [searchValue, setSearchValue] = useState('');
