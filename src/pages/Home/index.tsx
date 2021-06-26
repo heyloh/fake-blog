@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 
 import { handleLoadPosts } from '../../utils/handleLoadPosts';
 
@@ -33,16 +33,17 @@ function Home(props: HomeProps) {
     );
   }) : posts;
 
-  useEffect(() => {
-    loadPosts();
-  }, []);
-
-  const loadPosts = () => {
+  
+  const loadPosts = useCallback((page, postsPerPage) => {
     handleLoadPosts().then((posts) => {
       setPosts(posts.slice(page, postsPerPage));
       setAllPosts(posts);
     });
-  };
+  }, []);
+
+  useEffect(() => {
+    loadPosts(page, postsPerPage);
+  }, [loadPosts, page, postsPerPage]);
 
   const loadMorePosts = () => {
     const nextPage = page + postsPerPage;
