@@ -42,8 +42,8 @@ function Home(props: HomeProps) {
   }, []);
 
   useEffect(() => {
-    loadPosts(page, postsPerPage);
-  }, [loadPosts, page, postsPerPage]);
+    loadPosts(0, postsPerPage);
+  }, [loadPosts, postsPerPage]);
 
   const loadMorePosts = () => {
     const nextPage = page + postsPerPage;
