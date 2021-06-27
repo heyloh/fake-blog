@@ -1,9 +1,9 @@
 import './styles.css';
 
 interface ButtonProps {
-  action: () => void;
-  text: string;
-  disabled: boolean;
+  action?: () => void;
+  text?: string;
+  disabled?: boolean;
 }
 
 const Button = ({ text, action, disabled }: ButtonProps) => {
